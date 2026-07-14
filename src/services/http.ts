@@ -7,7 +7,7 @@ import router from '@/router'
  * Injecte automatiquement le JWT et gere la deconnexion en cas de token expire/invalide.
  */
 export const http = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL ?? 'https://securetrans.onrender.com',  //'http://localhost:8080/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL ?? 'https://securetrans.onrender.com/api',  //'http://localhost:8080/api',
   timeout: 10000
 })
 
