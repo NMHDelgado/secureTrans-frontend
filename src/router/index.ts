@@ -3,32 +3,24 @@ import type { RouteRecordRaw } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 
 const routes: RouteRecordRaw[] = [
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: () => import('@/views/HomeView.vue'),
-  //   meta: { title: 'Accueil' }
-  // },
+  {
+    path: '/',
+    name: 'home',
+    component: () => import('@/views/HomeView.vue'),
+    meta: { title: 'Accueil' }
+  },
   {
     path: '/connexion',
     name: 'login',
     component: () => import('@/views/LoginView.vue'),
     meta: { title: 'Connexion', guestOnly: true }
   },
-
   {
-    path: '/',
-    name: 'home',
+    path: '/tableau-de-bord',
+    name: 'user-dashboard',
     component: () => import('@/views/UserDashboardView.vue'),
-    meta: { title: 'Accueil'}
+    meta: { title: 'Tableau de bord', requiresAuth: true }
   },
-
-  // {
-  //   path: '/tableau-de-bord',
-  //   name: 'user-dashboard',
-  //   component: () => import('@/views/UserDashboardView.vue'),
-  //   meta: { title: 'Tableau de bord', requiresAuth: true }
-  // },
   {
     path: '/transactions',
     name: 'transactions',
